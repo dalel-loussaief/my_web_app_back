@@ -1,0 +1,18 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "80:3000"
+    networks:
+      - app-network
+  backend:
+      build:
+        context: ./backend-project
+      ports:
+        - "8081:8080"
+      networks:
+        - app-network
+networks:
+  app-network:
